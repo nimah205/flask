@@ -1,8 +1,8 @@
 FROM python:3.6.1-alpine
 
-WORKDIR /flask-test
+WORKDIR .
 
-ADD . /flask-test
+ADD . /
 
 RUN pip install -r requirements.txt
 
