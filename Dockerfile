@@ -1,9 +1,17 @@
 FROM python:3.6.1-alpine
 
-WORKDIR .
+RUN mkdir /application
+WORKDIR /application
 
-ADD . /
-
+COPY requirements.txt
 RUN pip install -r requirements.txt
 
-CMD ["python","app.py"]
+COPY . .
+
+ENV PYTHONUNBUFFERED 1
+
+EXPOSE 5000
+STOPSIGNAL SIGINT
+
+ENTRYPOINT ["python"]
+CMD ["app.py"]
