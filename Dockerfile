@@ -1,7 +1,7 @@
 FROM python:3.6.1-alpine
 
-RUN mkdir /application
-WORKDIR /application
+RUN mkdir /flask
+WORKDIR /flask
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
